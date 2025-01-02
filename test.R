@@ -15,7 +15,6 @@ alc<-read_csv("./england_ks5final.csv", na = c('*','','na')) %>%
 
 app <- teal::init(
   data = teal_data(
-    iris = iris,
     alc = alc
   ),
   modules = teal::modules(
