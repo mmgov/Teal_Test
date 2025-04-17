@@ -13,7 +13,9 @@ alc<-read_csv("./england_ks5final.csv", na = c('*','','na')) %>%
     ,ESTAB != 'NA'
     ,!SCHOOLTYPE %in% c('SS','3066905','3104027','AC1619','Agriculture and Horticulture College'
                         ,'Art, Design and Performing Arts College','CTC','MODFC',NA))%>%
-  mutate_at(c('TALLPPE_ALEV_1618', 'TALLPUP_ALEV_1618'), as.numeric)
+  mutate_at(c('TALLPPE_ALEV_1618', 'TALLPUP_ALEV_1618'), as.numeric) %>% 
+  select('SCHNAME','TALLPPE_ALEV_1618','TALLPUP_ALEV_1618','SCHOOLTYPE','TOWN','PCON_NAME')
+  
 
 app <- teal::init(
   data = teal_data(
